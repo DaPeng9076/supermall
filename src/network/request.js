@@ -11,15 +11,16 @@ export function request(config){
   instance.interceptors.request.use(config => {
     return config ;
   },err => {
-    // return err ;
+    // console.log(err);
+    return err ;
   })
 
     //相应拦截
   instance.interceptors.response.use(res => {
     return res.data ;
   },err => {
-    // return err ;
-    console.log(err);
+    return err ;
+    // console.log(err);
   })
 
   //3. 发送真正的网络请求
